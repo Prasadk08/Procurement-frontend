@@ -8,7 +8,7 @@ export default function VendorPage() {
   const [vendors, setVendors] = useState<any[]>([]);
   const [form, setForm] = useState({ name: "", email: "", phone: "" });
 
-  const handleAdd = async (e) => {
+  const handleAdd = async (e:any) => {
     e.preventDefault();
     if (!form.name || !form.email) {
       toast.error("Please provide vendor name and email");
