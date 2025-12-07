@@ -21,7 +21,8 @@ export default function RfpDetails({ rfpId }: { rfpId: string }) {
       try {
         setLoading(true);
 
-        const res = await fetch(`https://procurement-backend-1zi3.onrender.com/rfp/${rfpId}`);
+        // const res = await fetch(`https://procurement-backend-1zi3.onrender.com/rfp/${rfpId}`);
+        const res = await fetch(`http://localhost:8080/rfp/${rfpId}`);
 
         if (!res.ok) {
           throw new Error(

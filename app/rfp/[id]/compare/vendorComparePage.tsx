@@ -21,7 +21,8 @@ export default function VendorComparePage({ rfpId }: any) {
 
       try {
         const res = await fetch(
-          `https://procurement-backend-1zi3.onrender.com/compare/${rfpId}/ai-compare`
+          // `https://procurement-backend-1zi3.onrender.com/compare/${rfpId}/ai-compare`
+          `http://localhost:8080/compare/${rfpId}/ai-compare`
         );
 
         if (!res.ok) {

@@ -155,13 +155,6 @@ export default function RfpForm() {
 
           {/* CTA Buttons */}
           <div className="pt-4 flex gap-4">
-            <button className="px-6 py-3 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition">
-              Send to Vendors
-            </button>
-            <button className="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300">
-              Edit
-            </button>
-
             <Link
               href={`/rfp/${rfpData._id}`}
               className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700"

@@ -12,7 +12,8 @@ export default function SendRfpSection({ rfpId, onSent }: any) {
   useEffect(() => {
     const loadVendors = async () => {
       try {
-        const res = await axios.get("https://procurement-backend-1zi3.onrender.com/vendor/getvendor");
+        // const res = await axios.get("https://procurement-backend-1zi3.onrender.com/vendor/getvendor");
+        const res = await axios.get("http://localhost:8080/vendor/getvendor");
 
         if (res?.data) {
           setVendors(Array.isArray(res.data) ? res.data : []);
@@ -54,8 +55,8 @@ export default function SendRfpSection({ rfpId, onSent }: any) {
 
     setSending(true);
     try {
-      await axios.post(`https://procurement-backend-1zi3.onrender.com/proposal/${rfpId}/send`, {
-      // await axios.post(`http://localhost:8080/proposal/${rfpId}/send`, {
+      // await axios.post(`https://procurement-backend-1zi3.onrender.com/proposal/${rfpId}/send`, {
+      await axios.post(`http://localhost:8080/proposal/${rfpId}/send`, {
         vendors: selected,
       });
 

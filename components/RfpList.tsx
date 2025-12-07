@@ -12,7 +12,8 @@ export default function RfpList() {
     async function loadRfps() {
       try {
         setLoading(true);
-        const res = await axios.get("https://procurement-backend-1zi3.onrender.com/rfp/rfps");
+        // const res = await axios.get("https://procurement-backend-1zi3.onrender.com/rfp/rfps");
+        const res = await axios.get("http://localhost:8080/rfp/rfps");
 
         if (res?.data) {
           setRfps(Array.isArray(res.data) ? res.data : []);

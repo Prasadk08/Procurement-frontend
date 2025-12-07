@@ -29,6 +29,7 @@ export default function VendorResponsePageClient({
       }
 
       try {
+        // const res = await axios.get(`https://procurement-backend-1zi3.onrender.com/rfp/${rfpId}`);
         const res = await axios.get(`http://localhost:8080/rfp/${rfpId}`);
 
         if (res?.data) {
@@ -66,6 +67,7 @@ export default function VendorResponsePageClient({
 
     try {
       await axios.post(
+        // `https://procurement-backend-1zi3.onrender.com/proposal/${rfpId}/${vendorId}/submit`,
         `http://localhost:8080/proposal/${rfpId}/${vendorId}/submit`,
         {
           quotedAmount: amount,

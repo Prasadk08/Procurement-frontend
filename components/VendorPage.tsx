@@ -60,7 +60,8 @@ export default function VendorPage() {
   useEffect(() => {
     async function load() {
       try {
-        const res = await axios.get("https://procurement-backend-1zi3.onrender.com/vendor/getvendor");
+        // const res = await axios.get("https://procurement-backend-1zi3.onrender.com/vendor/getvendor");
+        const res = await axios.get("http://localhost:8080/vendor/getvendor");
 
         if (res?.data) {
           setVendors(Array.isArray(res.data) ? res.data : []);
