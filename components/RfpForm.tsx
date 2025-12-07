@@ -19,7 +19,8 @@ export default function RfpForm() {
     setRfpData(null);
 
     try {
-      const res = await axios.post("https://procurement-backend-1zi3.onrender.com/rfp/generate-rfp", {
+      // const res = await axios.post("https://procurement-backend-1zi3.onrender.com/rfp/generate-rfp", {
+      const res = await axios.post("http://localhost:8080/rfp/generate-rfp", {
         input,
       });
 
