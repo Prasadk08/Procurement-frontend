@@ -54,8 +54,8 @@ export default function SendRfpSection({ rfpId, onSent }: any) {
 
     setSending(true);
     try {
-      await axios.post(`https://procurement-backend-1zi3.onrender.com/proposal/${rfpId}/send`, {
-      // await axios.post(`http://localhost:8080/proposal/${rfpId}/send`, {
+      // await axios.post(`https://procurement-backend-1zi3.onrender.com/proposal/${rfpId}/send`, {
+      await axios.post(`http://localhost:8080/proposal/${rfpId}/send`, {
         vendors: selected,
       });
 
