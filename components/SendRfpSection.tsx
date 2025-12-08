@@ -7,6 +7,8 @@ export default function SendRfpSection({ rfpId, onSent }: any) {
   const [vendors, setVendors] = useState<any[]>([]);
   const [selected, setSelected] = useState<string[]>([]);
   const [sending, setSending] = useState(false);
+  const [globalLoading, setGlobalLoading] = useState(false);
+
 
   // Fetch all vendors
   useEffect(() => {
@@ -48,6 +50,8 @@ export default function SendRfpSection({ rfpId, onSent }: any) {
       return;
     }
 
+    setGlobalLoading(true); 
+
     if (selected.length === 0) {
       toast.error("Please select at least one vendor!");
       return;
@@ -71,11 +75,24 @@ export default function SendRfpSection({ rfpId, onSent }: any) {
         "Failed to send RFP. Please try again.";
       toast.error(errorMessage);
     } finally {
+      setGlobalLoading(false);
       setSending(false);
     }
   };
 
   return (
+    <>
+        {globalLoading && (
+      <div className="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm flex items-center justify-center z-50">
+        <img
+      className="animate-bounce"
+        src="/loading.png"
+        height="60px"
+        width="60px"
+
+      />
+      </div>
+    )}
     <div className="p-6 bg-gray-50 rounded-xl shadow-md mt-4">
       <h2 className="text-xl font-semibold mb-4">Send RFP to Vendors</h2>
 
@@ -120,5 +137,5 @@ export default function SendRfpSection({ rfpId, onSent }: any) {
         </>
       )}
     </div>
-  );
+  </>);
 }
