@@ -83,7 +83,7 @@ export default function SendRfpSection({ rfpId, onSent }: any) {
   return (
     <>
         {globalLoading && (
-      <div className="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm flex items-center justify-center z-50">
+      <div className="fixed inset-0 bg-opacity-40 backdrop-blur-sm flex items-center justify-center z-50">
         <img
       className="animate-bounce"
         src="/loading.png"
